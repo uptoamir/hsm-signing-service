@@ -1,0 +1,70 @@
+[
+  {
+    "concurrency": 1,
+    "duration_s": 8.0,
+    "requests": 79325,
+    "ok": 79325,
+    "errors": 0,
+    "error_rate": 0.0,
+    "throughput_rps": 9915.525792685563,
+    "p50_ms": 0.099,
+    "p95_ms": 0.111,
+    "p99_ms": 0.121,
+    "max_ms": 3.373,
+    "mean_ms": 0.10026415379766784,
+    "status_counts": {
+      "200": 79325
+    }
+  },
+  {
+    "concurrency": 10,
+    "duration_s": 8.0,
+    "requests": 193236,
+    "ok": 193236,
+    "errors": 0,
+    "error_rate": 0.0,
+    "throughput_rps": 24153.38529409612,
+    "p50_ms": 0.403,
+    "p95_ms": 0.442,
+    "p99_ms": 0.573,
+    "max_ms": 22.719,
+    "mean_ms": 0.4134224316379968,
+    "status_counts": {
+      "200": 193236
+    }
+  },
+  {
+    "concurrency": 100,
+    "duration_s": 8.0,
+    "requests": 195144,
+    "ok": 195144,
+    "errors": 0,
+    "error_rate": 0.0,
+    "throughput_rps": 24379.22535674804,
+    "p50_ms": 4.071,
+    "p95_ms": 4.207,
+    "p99_ms": 5.135,
+    "max_ms": 11.319,
+    "mean_ms": 4.100299624892386,
+    "status_counts": {
+      "200": 195144
+    }
+  },
+  {
+    "concurrency": 500,
+    "duration_s": 8.02,
+    "requests": 195288,
+    "ok": 195288,
+    "errors": 0,
+    "error_rate": 0.0,
+    "throughput_rps": 24343.664914672012,
+    "p50_ms": 20.463,
+    "p95_ms": 20.767,
+    "p99_ms": 25.151,
+    "max_ms": 28.591,
+    "mean_ms": 20.505160117365097,
+    "status_counts": {
+      "200": 195288
+    }
+  }
+]
