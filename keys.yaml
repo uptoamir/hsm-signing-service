@@ -1,0 +1,15 @@
+# Keys the service provisions at startup. Each key is looked up on the token
+# by label; if absent it is generated *inside* the token with
+# CKA_SENSITIVE=true and CKA_EXTRACTABLE=false. Keys marked `optional: true`
+# are skipped (with a warning) when the token lacks the mechanism.
+keys:
+  - id: arkion-intermediate-prod
+    kind: ecdsa-p256
+  - id: arkion-kek-prod
+    kind: aes-256
+  - id: arkion-rsa-prod
+    kind: rsa-3072
+    optional: true
+  - id: arkion-ed25519-prod
+    kind: ed25519
+    optional: true

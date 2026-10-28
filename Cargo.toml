@@ -1,0 +1,66 @@
+[package]
+name = "hsm-signer"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+description = "HSM-backed signing and key-management service (PKCS#11) for non-human identities"
+license = "MIT"
+publish = false
+
+[dependencies]
+# HTTP / async
+axum = { version = "0.8", features = ["macros"] }
+tokio = { version = "1", features = ["full"] }
+tower = { version = "0.5", features = ["util", "timeout", "limit"] }
+tower-http = { version = "0.7", features = ["trace", "request-id", "limit", "timeout", "catch-panic", "util"] }
+http = "1"
+http-body-util = "0.1"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml_ng = "0.10"
+base64 = "0.22"
+
+# Errors / logging / telemetry
+thiserror = "2"
+anyhow = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json", "fmt"] }
+metrics = "0.24"
+metrics-exporter-prometheus = { version = "0.18", default-features = false }
+opentelemetry = "0.33"
+opentelemetry_sdk = "0.33"
+opentelemetry-otlp = { version = "0.33", default-features = false, features = ["trace", "http-proto", "reqwest-blocking-client"] }
+tracing-opentelemetry = "0.34"
+
+# PKCS#11 and software crypto (verification + mock backend)
+cryptoki = "0.12"
+p256 = { version = "0.13", features = ["ecdsa", "pem", "pkcs8"] }
+rsa = { version = "0.9", features = ["sha2", "pem"] }
+ed25519-dalek = { version = "2", features = ["pkcs8", "pem", "rand_core"] }
+sha2 = "0.10"
+aes-gcm = "0.10"
+secrecy = "0.10"
+zeroize = "1"
+rand_core = { version = "0.6", features = ["getrandom"] }
+
+# Misc
+clap = { version = "4", features = ["derive", "env"] }
+humantime = "2"
+uuid = { version = "1", features = ["v4"] }
+async-trait = "0.1"
+parking_lot = "0.12"
+hex = "0.4"
+bytes = "1"
+
+# Benchmark binary
+hdrhistogram = "7"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

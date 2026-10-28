@@ -1,0 +1,5 @@
+/target
+/.softhsm
+/secrets
+*.log
+.DS_Store
