@@ -5,7 +5,12 @@ edition = "2021"
 rust-version = "1.85"
 description = "HSM-backed signing and key-management service (PKCS#11) for non-human identities"
 license = "MIT"
+default-run = "hsm-signer"
 publish = false
+
+[[bin]]
+name = "hsm-signer"
+path = "src/main.rs"
 
 [dependencies]
 # HTTP / async
