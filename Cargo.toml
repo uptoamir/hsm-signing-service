@@ -12,6 +12,10 @@ publish = false
 name = "hsm-signer"
 path = "src/main.rs"
 
+[[bin]]
+name = "hsm-bench"
+path = "src/bin/bench.rs"
+
 [dependencies]
 # HTTP / async
 axum = { version = "0.8", features = ["macros"] }
